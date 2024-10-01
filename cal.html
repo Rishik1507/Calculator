@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+
+.keyboard{
+    height:300px;
+    justify-content: center;
+    align-items: center;
+    margin:20px auto;
+    margin-left:20px;
+    top:auto;
+
+}
+        .container{
+            background-color: black;
+            height:500px;
+            width:500px;
+            border-radius:10px;
+            margin:20px auto;
+            padding-top:60px;
+        }
+        .calculator{
+            height: 350px;
+            width:250px;
+           margin: 0  auto;
+
+         padding-top:10px;
+            background-color: aqua;
+            border-radius:12px;
+        }
+        .operator,.numbers{
+            color:white;
+            margin-top:10px;
+            border-color:solid black;
+            border-radius:20px;
+            margin:2px auto;
+            background-color:red;
+            height:50px;
+            width:50px;
+            
+        }
+        button:hover{
+            cursor: pointer;
+            background-color:orange;
+            transform: scale(1.1);
+        }
+        .display{
+            width:220px;
+            height:40px;
+            background-color: white;
+            border-radius:7px;
+            margin-bottom:10px;
+            margin-right:10px;
+            border-color: solid black;
+        }
+    </style>
+</head>
+<body>
+   <center> <h3> Calculator</h3></center>
+<div class="container">
+    <div class="calculator">
+        <div class="keyboard">
+            <div class="display"></div>
+
+            <button id="clear" class="operator">C</button>
+            <button id="back" class="operator">CE</button>
+            <button id="%" class="operator">%</button>
+            <button id="/" class="operator">&#247;</button>
+            <button id="7" class="numbers">7</button>
+            <button id="8" class="numbers">8</button>
+            <button id="9" class="numbers">9</button>
+            <button id="*" class="operator">&times;</button>
+            <button id="4" class="numbers">4</button>
+            <button id="5" class="numbers">5</button>
+            <button id="6" class="numbers">6</button>
+            <button id="-" class="operator">-</button>
+            <button id="3" class="numbers">3</button>
+            <button id="2" class="numbers">2</button>
+            <button id="1" class="numbers">1</button>
+            <button id="+" class="operator">+</button>
+            <button id="0" class="numbers">0</button>
+            <button id="00" class="numbers">00</button>
+            <button id="." class="operator">.</button>
+            <button id="=" class="operator">=</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>
