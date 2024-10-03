@@ -23,14 +23,15 @@
             border-radius:10px;
             margin:20px auto;
             padding-top:60px;
+            
         }
         .calculator{
-            height: 350px;
+            height: 390px;
             width:250px;
            margin: 0  auto;
 
          padding-top:10px;
-            background-color: aqua;
+            background-color: rgb(253, 248, 248);
             border-radius:12px;
         }
         .operator,.numbers{
@@ -46,17 +47,28 @@
         }
         button:hover{
             cursor: pointer;
-            background-color:orange;
+            background-color:transparent;
             transform: scale(1.1);
+            color:black;
         }
         .display{
-            width:220px;
-            height:40px;
-            background-color: white;
-            border-radius:7px;
-            margin-bottom:10px;
-            margin-right:10px;
-            border-color: solid black;
+            background-color: #222;
+
+color: white;
+
+font-size: 32px;
+
+text-align: right;
+
+padding: 20px;
+
+border-radius: 10px;
+
+margin-bottom: 10px;
+padding-right: 40px;
+margin-right:20px;
+
+
         }
     </style>
 </head>
@@ -65,30 +77,68 @@
 <div class="container">
     <div class="calculator">
         <div class="keyboard">
-            <div class="display"></div>
+            <div class="display" id="display">0</div>
 
-            <button id="clear" class="operator">C</button>
-            <button id="back" class="operator">CE</button>
-            <button id="%" class="operator">%</button>
-            <button id="/" class="operator">&#247;</button>
-            <button id="7" class="numbers">7</button>
-            <button id="8" class="numbers">8</button>
-            <button id="9" class="numbers">9</button>
-            <button id="*" class="operator">&times;</button>
-            <button id="4" class="numbers">4</button>
-            <button id="5" class="numbers">5</button>
-            <button id="6" class="numbers">6</button>
-            <button id="-" class="operator">-</button>
-            <button id="3" class="numbers">3</button>
-            <button id="2" class="numbers">2</button>
-            <button id="1" class="numbers">1</button>
-            <button id="+" class="operator">+</button>
-            <button id="0" class="numbers">0</button>
-            <button id="00" class="numbers">00</button>
-            <button id="." class="operator">.</button>
-            <button id="=" class="operator">=</button>
+            <button id="clear" class="operator " onclick="deleteWhole()" >C</button>
+            <button id="back" class="operator"onclick="deleteLast()">CE</button>
+            <button id="%" class="operator" onclick="append('/')">%</button>
+            <button id="/" class="operator"onclick="append('*')">&#247;</button>
+            <button id="7" class="numbers"onclick="append('7')">7</button>
+            <button id="8" class="numbers"onclick="append('8')">8</button>
+            <button id="9" class="numbers"onclick="append('9')">9</button>
+            <button id="*" class="operator"onclick="append('*')">&times;</button>
+            <button id="4" class="numbers"onclick="append('4')">4</button>
+            <button id="5" class="numbers"onclick="append('5')">5</button>
+            <button id="6" class="numbers"onclick="append('6')">6</button>
+            <button id="-" class="operator"onclick="append('-')">-</button>
+            <button id="3" class="numbers"onclick="append('3')">3</button>
+            <button id="2" class="numbers"onclick="append('2')">2</button>
+            <button id="1" class="numbers"onclick="append('1')">1</button>
+            <button id="+" class="operator"onclick="append('+')">+</button>
+            <button id="0" class="numbers"onclick="append('0')">0</button>
+            <button id="00" class="numbers"onclick="append('00')">00</button>
+            <button id="." class="operator"onclick="append('.')">.</button>
+            <button id="=" class="operator"onclick="result()">=</button>
         </div>
     </div>
 </div>
+<script>
+    const display = document.getElementById("display")
+    function deleteWhole(){
+
+        display.innerText="0";
+    }
+    function deleteLast(){
+
+        if (display.innerText.length>1)
+    {
+
+        display.innerText=display.innerText.slice(0,-1);
+    }
+    else{
+        display.innerText="0"
+    }
+    }
+    function append(value){
+        if(display.innerText==="0" && value!=="." ){
+            display.innerText=value;
+        }
+        else{
+            display.innerText+=value;
+        }
+
+    }
+    function result(){
+
+    try{
+        display.innerText=eval(display.innerText);
+    }
+    catch{
+        display.innerText="Error";
+    }
+    }
+   
+    
+</script>
 </body>
 </html>
